@@ -116,7 +116,7 @@ while True:
     elif msg['Protocol'] == "R900BCD":
         msg['Type'] = "Water"
         msg['ID'] = str(data['Message']['ID'])
-        msg['Consumption'] = data['Message']['Consumption'] / 10.0 # convert to gal
+        msg['Consumption'] = data['Message']['Consumption'] # (ADD 04-15-2021 removed scaling)/ 10.0 # convert to gal
         msg['Unit'] = "gal"
     # filter out cases where consumption value is negative        
     if msg['Consumption'] > 0:        
